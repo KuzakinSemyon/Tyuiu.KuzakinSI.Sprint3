@@ -12,7 +12,7 @@ namespace Tyuiu.KuzakinSI.Sprint3.Task2.V27.Lib
             
             do
             {
-                double term = 4.0 / (1 + Math.Pow(value, i));
+                double term = Math.Pow(4.0 / (1 + Math.Pow(value, i)), i);
                 sum += term;
                 i++;
             }

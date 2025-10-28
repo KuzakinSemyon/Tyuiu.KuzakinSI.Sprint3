@@ -1,28 +1,38 @@
 using System;
 using tyuiu.cources.programming.interfaces.Sprint3;
 
-namespace Tyuiu.KuzakinSI.Sprint3.Task4.V8.Lib
+namespace Tyuiu.KuzakinSI.Sprint3.Task3.V3.Lib
 {
-    public class DataService : ISprint3Task4V8
+    public class DataService : ISprint3Task3V3
     {
-        public double Calculate(int startValue, int stopValue)
+        public int GetMinCharCount(string value, char item)
         {
-            double product = 1;
-            
-            for (int x = startValue; x <= stopValue; x++)
+            int minCount = int.MaxValue;
+            int currentCount = 0;
+
+            foreach (char c in value)
             {
-                // При x = 0 прерываем цикл
-                if (x == 0)
+                if (c == item)
                 {
-                    break;
+                    currentCount++;
                 }
-                
-                // Вычисляем значение функции y = (x/sin(x)) + 0.5
-                double y = (x / Math.Sin(x)) + 0.5;
-                product *= y;
+                else
+                {
+                    if (currentCount > 0 && currentCount < minCount)
+                    {
+                        minCount = currentCount;
+                    }
+                    currentCount = 0;
+                }
             }
-            
-            return Math.Round(product, 3);
+
+            // Проверяем последовательность в конце строки
+            if (currentCount > 0 && currentCount < minCount)
+            {
+                minCount = currentCount;
+            }
+
+            return minCount == int.MaxValue ? 0 : minCount;
         }
     }
 }

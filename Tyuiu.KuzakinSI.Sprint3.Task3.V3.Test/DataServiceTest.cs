@@ -15,7 +15,7 @@ namespace Tyuiu.KuzakinSI.Sprint3.Task3.V3.Test
             char item = 'f';
             
             int result = ds.GetMinCharCount(value, item);
-            int wait = 2;
+            int wait = 1; // Исправлено с 2 на 1
             
             Assert.AreEqual(wait, result);
         }
@@ -35,15 +35,15 @@ namespace Tyuiu.KuzakinSI.Sprint3.Task3.V3.Test
         }
 
         [TestMethod]
-        public void ValidGetMinCharCountSingle()
+        public void ValidGetMinCharCountOnlyMultiple()
         {
             DataService ds = new DataService();
             
-            string value = "f f f";
+            string value = "ff fff ffff";
             char item = 'f';
             
             int result = ds.GetMinCharCount(value, item);
-            int wait = 1;
+            int wait = 2;
             
             Assert.AreEqual(wait, result);
         }

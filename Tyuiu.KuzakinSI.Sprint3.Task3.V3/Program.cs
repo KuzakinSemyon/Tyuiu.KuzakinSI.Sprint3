@@ -44,8 +44,8 @@ namespace Tyuiu.KuzakinSI.Sprint3.Task3.V3
             Console.WriteLine("Анализ строки:");
             Console.WriteLine("cvbmzff - 2 буквы 'f' подряд");
             Console.WriteLine("orffgtrr - 2 буквы 'f' подряд"); 
-            Console.WriteLine("dkfvfffdr - 3 буквы 'f' подряд");
-            Console.WriteLine("Минимальная последовательность: 2");
+            Console.WriteLine("dkfvfffdr - есть одиночная 'f' после 'k' и 3 буквы 'f' подряд");
+            Console.WriteLine("Минимальная последовательность: 1 (одиночная 'f')");
             
             Console.ReadLine();
         }

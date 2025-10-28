@@ -9,25 +9,28 @@ namespace Tyuiu.KuzakinSI.Sprint3.Task3.V3.Lib
         {
             int minCount = int.MaxValue;
             int currentCount = 0;
+            bool inSequence = false;
 
             foreach (char c in value)
             {
                 if (c == item)
                 {
                     currentCount++;
+                    inSequence = true;
                 }
                 else
                 {
-                    if (currentCount > 0 && currentCount < minCount)
+                    if (inSequence && currentCount > 1 && currentCount < minCount)
                     {
                         minCount = currentCount;
                     }
                     currentCount = 0;
+                    inSequence = false;
                 }
             }
 
             // Проверяем последовательность в конце строки
-            if (currentCount > 0 && currentCount < minCount)
+            if (inSequence && currentCount > 1 && currentCount < minCount)
             {
                 minCount = currentCount;
             }
